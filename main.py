@@ -15,15 +15,17 @@ for num in range(1,11):
 sounds = [[],[]]
 counter = 0
 # Create a list of all sound files in the dataset
-for filename in os.listdir(folders[0]):
-    if filename.endswith(extension):
-        sounds.append([filename])
+for num_folders in range(len(folders)):
+    for filename in os.listdir(folders[num_folders]):
+        if filename.endswith(extension):
+            sounds.append([folders[num_folders],filename])
 # print(folders[0])
+print(len(sounds))
 
 # Create a list of all sound files to a text file
-# with open('sounds.txt', 'w') as f:
-#     for sound in sounds:
-#         f.write("%s \n"%sound)
+with open('sounds.txt', 'w') as f:
+    for sound in sounds:
+        f.write("%s"%sound)
 
 # Train the data on split of the dataset
 for files in sounds:
