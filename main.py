@@ -19,12 +19,12 @@ for num_folders in range(len(folders)):
         if filename.endswith(extension):
             sounds.append([folders[num_folders].split("/")[4],filename])
 # print(folders[0])
-print(len(sounds))
+# print(len(sounds))
 
 # Create a list of all sound files to a text file
-with open('sounds.txt', 'w') as f:
-    for sound in sounds:
-        f.write("%s\n"%sound)
+# with open('sounds.txt', 'w') as f:
+#     for sound in sounds:
+#         f.write("%s\n"%sound)
 
 # Train the data on split of the dataset
 for files in sounds:
